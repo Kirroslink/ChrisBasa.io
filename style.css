@@ -2,3 +2,12 @@ body {
   text-align: center;
   background-color: #f0f8ff;
 }
+a {
+  color: #0073e6;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
