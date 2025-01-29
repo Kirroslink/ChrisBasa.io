@@ -8,5 +8,4 @@
 - [LinkedIn](https://www.linkedin.com/in/christopher-basaldua-876284183)
 - [Personal Blog](https://kirroslink.github.io/Personal-Blog/)
 - [Portfolio](https://sites.google.com/view/christopher-basaldua/home)
-
-  Feel free to connect with me!
+Feel free to connect with me!
