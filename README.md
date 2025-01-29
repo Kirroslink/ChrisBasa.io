@@ -1,2 +1,2 @@
 #Linktree!
-  This page is to test markdown coding for a simple linktree.
+  This page is to test coding for a simple linktree.
