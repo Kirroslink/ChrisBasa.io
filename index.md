@@ -1,83 +1,92 @@
-import React from 'react';
-import { Github, Twitter, Mail, Linkedin } from 'lucide-react';
-
-const MinimalLanding = () => {
-  const links = [
-    {
-      title: 'GitHub',
-      url: 'https://github.com/yourusername',
-      icon: <Github className="w-5 h-5" />
-    },
-    {
-      title: 'Twitter',
-      url: 'https://twitter.com/yourusername',
-      icon: <Twitter className="w-5 h-5" />
-    },
-    {
-      title: 'LinkedIn',
-      url: 'https://linkedin.com/in/yourusername',
-      icon: <Linkedin className="w-5 h-5" />
-    },
-    {
-      title: 'Email',
-      url: 'mailto:you@example.com',
-      icon: <Mail className="w-5 h-5" />
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-100 to-gray-200 flex flex-col items-center py-16 px-4">
-      <div className="w-full max-w-md">
-        {/* Profile Section */}
-        <div className="flex flex-col items-center mb-8">
-          <div className="w-24 h-24 rounded-full bg-gray-300 mb-4 overflow-hidden">
-            <img
-              src="/api/placeholder/96/96"
-              alt="Profile"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <h1 className="text-2xl font-bold text-gray-800 mb-2">Your Name</h1>
-          <p className="text-gray-600 text-center mb-4">
-            Short bio about yourself. What you do, what you're passionate about.
-          </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal Landing Page</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons via CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(180deg, #f3f4f6 0%, #e5e7eb 100%);
+        }
+        .link-card:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen">
+    <div class="container mx-auto px-4 py-16 max-w-md">
+        <!-- Profile Section -->
+        <div class="flex flex-col items-center mb-8">
+            <div class="w-24 h-24 rounded-full bg-gray-300 mb-4 overflow-hidden">
+                <!-- Replace with your image URL -->
+                <img src="https://github.com/yourusername.png" 
+                     alt="Profile" 
+                     class="w-full h-full object-cover"
+                     onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'96\' height=\'96\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%23666\' stroke-width=\'1\' stroke-linecap=\'round\' stroke-linejoin=\'round\'%3E%3Ccircle cx=\'12\' cy=\'8\' r=\'5\'/%3E%3Cpath d=\'M3 21v-2a7 7 0 0 1 14 0v2\'/%3E%3C/svg%3E'">
+            </div>
+            <h1 class="text-2xl font-bold text-gray-800 mb-2">Your Name</h1>
+            <p class="text-gray-600 text-center mb-4">
+                Short bio about yourself. What you do, what you're passionate about.
+            </p>
         </div>
 
-        {/* Links Section */}
-        <div className="space-y-4">
-          {links.map((link, index) => (
-            <a
-              key={index}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-between p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 group"
-            >
-              <div className="flex items-center space-x-3">
-                {link.icon}
-                <span className="font-medium text-gray-700 group-hover:text-gray-900">
-                  {link.title}
-                </span>
-              </div>
-              <svg
-                className="w-5 h-5 text-gray-400 group-hover:text-gray-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
+        <!-- Links Section -->
+        <div class="space-y-4">
+            <!-- GitHub -->
+            <a href="https://github.com/yourusername" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="link-card flex items-center justify-between p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-200 group">
+                <div class="flex items-center space-x-3">
+                    <i data-lucide="github" class="w-5 h-5"></i>
+                    <span class="font-medium text-gray-700 group-hover:text-gray-900">GitHub</span>
+                </div>
+                <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400 group-hover:text-gray-600"></i>
             </a>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-};
 
-export default MinimalLanding;
+            <!-- Twitter -->
+            <a href="https://twitter.com/yourusername" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="link-card flex items-center justify-between p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-200 group">
+                <div class="flex items-center space-x-3">
+                    <i data-lucide="twitter" class="w-5 h-5"></i>
+                    <span class="font-medium text-gray-700 group-hover:text-gray-900">Twitter</span>
+                </div>
+                <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400 group-hover:text-gray-600"></i>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com/in/yourusername" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="link-card flex items-center justify-between p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-200 group">
+                <div class="flex items-center space-x-3">
+                    <i data-lucide="linkedin" class="w-5 h-5"></i>
+                    <span class="font-medium text-gray-700 group-hover:text-gray-900">LinkedIn</span>
+                </div>
+                <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400 group-hover:text-gray-600"></i>
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:you@example.com" 
+               class="link-card flex items-center justify-between p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-200 group">
+                <div class="flex items-center space-x-3">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                    <span class="font-medium text-gray-700 group-hover:text-gray-900">Email</span>
+                </div>
+                <i data-lucide="chevron-right" class="w-5 h-5 text-gray-400 group-hover:text-gray-600"></i>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
